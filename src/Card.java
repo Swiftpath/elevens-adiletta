@@ -19,7 +19,7 @@ public class Card {
 	 * int value that holds the point value.
 	 */
 	private int pointValue;
-
+      
 
    /**
 	 * Creates a new <code>Card</code> instance.
@@ -33,6 +33,9 @@ public class Card {
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+			pointValue = cardPointValue;
+			suit = cardSuit;
+			rank = cardRank;
 	}
 
 
@@ -42,14 +45,15 @@ public class Card {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return suit;
    }
-
 	/**
 	 * Accesses this <code>Card's</code> rank.
 	 * @return this <code>Card's</code> rank.
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return rank;
 	}
 
    /**
@@ -58,6 +62,7 @@ public class Card {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return pointValue;
 	}
 
 	/** Compare this card with the argument.
