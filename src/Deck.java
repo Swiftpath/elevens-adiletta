@@ -36,6 +36,8 @@ public class Deck {
                 cards.add(new Card(ranks[j], suitString, values[j]));
             }
 	}
+        size=cards.size();
+        }
 
 
 	/**
@@ -44,6 +46,11 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+            	if(this.cards.size()==0){
+			return true;
+		}
+		return false;
+            }
 	}
 
 	/**
@@ -52,7 +59,8 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-	}
+                return this.card.size();
+}
 
 	/**
 	 * Randomly permute the given collection of cards
@@ -60,7 +68,13 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	}
+	 for( int b = this.size() - 1; b >= 0; b-- ) {
+		        int a = (int)(Math.random() * b);
+		        Card tem = cards.get(a);
+	            cards.set(a, cards.get(b));
+	            cards.set(b, tem);
+		 }
+}
 
 	/**
 	 * Deals a card from this deck.
@@ -74,7 +88,10 @@ public class Deck {
         Card c = cards.get(size);
         return c;
 	}
-
+    else {
+    return null;
+    }
+}
 	/**
 	 * Generates and returns a string representation of this deck.
 	 * @return a string representation of this deck.
