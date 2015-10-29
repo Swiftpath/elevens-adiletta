@@ -51,7 +51,7 @@ public class Deck {
 		}
 		return false;
             }
-	}
+	
 
 	/**
 	 * Accesses the number of undealt cards in this deck.
@@ -59,7 +59,7 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-                return this.card.size();
+                return this.cards.size();
 }
 
 	/**
@@ -70,10 +70,11 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	 for( int b = this.size() - 1; b >= 0; b-- ) {
 		        int a = (int)(Math.random() * b);
-		        Card tem = cards.get(a);
+		    Card temp = cards.get(a);
 	            cards.set(a, cards.get(b));
-	            cards.set(b, tem);
+	            cards.set(b, temp);
 		 }
+            this.size = cards.size();
 }
 
 	/**
@@ -84,14 +85,14 @@ public class Deck {
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
+        if (this.size <= 0){
+            return null;
+        }
         size--;
         Card c = cards.get(size);
         return c;
 	}
-    else {
-    return null;
-    }
-}
+
 	/**
 	 * Generates and returns a string representation of this deck.
 	 * @return a string representation of this deck.
@@ -127,4 +128,4 @@ public class Deck {
 		return rtn;
             }
        }
-   }
+   

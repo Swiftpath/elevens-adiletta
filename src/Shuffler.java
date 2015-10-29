@@ -66,15 +66,18 @@ public class Shuffler {
             int unshuffledPos = 0;
             int k = 0;
             for ( ;  k < mid; k++ ){
-                
+                temp[unshuffledPos] = values[k];
+                unshuffledPos += 2;
             }
+            unshuffledPos = 1;
             for ( ; k < values.length; k++) {
-                temp[k] = values[ k ];
-                k=k+2;
-                
+                temp[unshuffledPos]=values[k];
+                unshuffledPos += 2;
+                }
+            for (int i = 0; i < values.length; i++ ){
+                values[i] = temp[i];
                 }
             }
-	}
 
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
@@ -89,11 +92,11 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-                 int r; int temp;
+                 int x; int temp;
             for (int k = 0; k<values.length;k++) {
-                r = (int) (Math.random () *values.length);
-                temp = values[r];
-                values[r]=values[k];
+                x = (int) (Math.random () *values.length);
+                temp = values[x];
+                values[x]=values[k];
                 values[k]=temp;
           }    
     }
