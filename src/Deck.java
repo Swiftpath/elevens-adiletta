@@ -30,13 +30,18 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
+            assert values.length == rank.leangth: "rank isnt the same";
+            assert suits.length != 0 && values.lenght !=0 :"suit is empty";
         cards = new ArrayList<Card>();
         for (int j = 0; j < ranks.length; j++) {
+            assert j < values.length : "counter is too large";
             for (String suitString : suits){
                 cards.add(new Card(ranks[j], suitString, values[j]));
             }
 	}
+        assert !cards.isEmpty() : "cards size is 0";
         size=cards.size();
+        asser !this.isEmpty() : "this dec is empty";
         }
 
 
@@ -69,7 +74,9 @@ public class Deck {
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	 for( int b = this.size() - 1; b >= 0; b-- ) {
-		        int a = (int)(Math.random() * b);
+                    assert b cards.size(): "counter B is larger then arraylist";
+		    int a = (int)(Math.random() * b);
+                    assert a < cards.size(): "randome num is out of bounds";
 		    Card temp = cards.get(a);
 	            cards.set(a, cards.get(b));
 	            cards.set(b, temp);
@@ -86,8 +93,10 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         // IS EMPTY if so return null
         if (this.size <= 0){
+            assert this.size == 0: "the deck is not actually empty";
             return null;
         }
+        assert this.size > 0 : "the deck is actually empty";
         size--;
         Card c = cards.get(size);
         return c;
@@ -102,6 +111,7 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
+                        assert k < cards.size() : "counter is too larg";
 			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
