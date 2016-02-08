@@ -91,7 +91,7 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	
                  int x; int temp;
             for (int k = 0; k<values.length;k++) {
                 x = (int) (Math.random () *values.length);
